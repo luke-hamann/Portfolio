@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+:root {
+    color-scheme: light dark;
+    font-family: sans-serif;
+}
+
+html {
+    margin: 1rem;
+}
+
+body {
+    max-width: 50rem;
+    margin: 0 auto;
+}
