@@ -13,7 +13,7 @@ let myExpression = function(parameter) {
 
 function checkEvenOdd(someFunction, someNumber) {
     if (someNumber % 2 == 0) {
-        someFunction(someNumber)
+        someFunction(someNumber);
     } else {
         console.log("the number is odd");
     }
