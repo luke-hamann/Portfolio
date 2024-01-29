@@ -1,6 +1,8 @@
 "use strict";
 
-let container = document.querySelector("div");
+const $ = selector => document.querySelector(selector);
+
+let container = $("div");
 
 for (let i = 0; i < 5; i++) {
     let newParagraph = document.createElement("p");
@@ -9,6 +11,8 @@ for (let i = 0; i < 5; i++) {
 }
 
 function changeColors() {
-    document.body.style.background = "pink";
-    container.style.background = "lightblue";
+    document.body.classList.toggle("pink");
+    container.classList.toggle("blue");
 }
+
+$("button").onclick = changeColors;
