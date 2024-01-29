@@ -2,26 +2,26 @@
 
 const $ = selector => document.querySelector(selector);
 
-document.addEventListener("DOMContentLoaded", () => {
-    let txtName = $("#name");
-    let btnGo = $("#go");
-    let elmOutput = $("#output");
+const txtName = $("#name");
+const btnGo = $("#go");
+const elmOutput = $("pre");
 
-    btnGo.addEventListener("click", event => {
-        event.preventDefault();
+btnGo.addEventListener("click", event => {
+    event.preventDefault();
 
-        let name = txtName.value;
+    let name = txtName.value;
+    elmOutput.classList.remove("error");
 
-        if (name == "") {
-            elmOutput.textContent = "Please enter a name.";
-            return;
-        }
+    if (name == "") {
+        elmOutput.textContent = "Please enter a name.";
+        elmOutput.classList.add("error");
+        return;
+    }
 
-        elmOutput.textContent = `Hello, ${name}!\n\n`;
+    elmOutput.textContent = `Hello, ${name}!\n\n`;
+    for (let i = 1; i <= name.length; i++) {
+        elmOutput.textContent += `${name.substr(0, i)}\n`;
+    }
 
-        for (let i = 1; i <= name.length; i++) {
-            let fragment = name.substr(0, i);
-            elmOutput.textContent += fragment + "\n";
-        }
-    })
+    txtName.select();
 });
