@@ -1,6 +1,6 @@
 "use strict";
 
-function createPlayer(Name, HP, ...Moves) {
+function createCharacter(Name, HP, ...Moves) {
     var hp = HP;
     var name = Name;
     var moves = Moves;
@@ -25,9 +25,9 @@ function createPlayer(Name, HP, ...Moves) {
     };
 }
 
-let player = createPlayer("Bob", 18, "Jump", "Kick", "Hop");
+let character = createCharacter("Bob", 18, "Jump", "Kick", "Hop");
 
-player.listMoves();
+character.listMoves();
 
-console.log(player.getHP());
-console.log(player.getName());
+console.log(character.getHP());
+console.log(character.getName());
